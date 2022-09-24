@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root{
+    /* Primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /* Neutral */
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Poppins', sans-serif;
+    background: var(--very-light-gray);
+}
+p{
+    color: var(--very-dark-blue);
+}
+
+
+main{
+    padding: 5% 25px;
+    text-align: center;
+}
+
+.header{
+    max-width: 450px;
+    margin: 30px auto;
+}
+.header h1{
+    font-weight: 300;
+    line-height: 1.5em;
+    font-size: 1.45em;
+}
+.header h1 strong{
+    font-weight: 700;
+}
+.header p{
+    line-height: 1.4em;
+    font-size: 0.85em;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.cards-container img{
+    height: 40px;
+    width: 40px;
+}
+.card{
+    max-width: 320px;
+    background: white;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px 1px hsl(0, 13%, 92%);
+    transition: all .3s;
+}
+.card:hover{
+    transform: scale(105%);
+}
+.card:hover img{
+    animation: spin .5s;
+}
+.cards-container .card:first-of-type{
+    border-top: 3px solid var(--cyan);    
+}
+.center-cards .card:nth-child(1){
+    border-top: 3px solid var(--red);    
+}
+.center-cards .card:nth-child(2){
+    border-top: 3px solid var(--orange) !important;    
+}
+.cards-container .card:last-of-type{
+    border-top: 3px solid var(--blue);    
+}
+.card .text{
+    text-align: left;
+}
+.text h2{
+    font-size: 1.1em;
+}
+.text p{
+    margin-top: 10px;
+    line-height: 1.5em;
+    font-size: 0.75em;
+    width: 80%;
+}
+.card .img{
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+
+@media (min-width: 800px) {
+    main{
+        padding: 0px 0;
+    }
+    .header h1{
+        margin: 0 auto;
+    }
+    .header p{
+        max-width: 450px;
+        margin: 10px auto;
+    }
+    .card{
+        margin: 30px 20px;
+    }
+    .cards-container{
+        display: flex;
+        max-width: 800px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .center-cards{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards-container{
+        max-width: 100%;
+        align-items: center;
+    }
+    .card{
+        margin: 15px;
+    }
+    .center-cards{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
